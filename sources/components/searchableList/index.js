@@ -17,6 +17,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'powderblue',
   },
+  search: {
+    height: 25,
+    borderBottomColor: '#0000',
+    borderBottomWidth: 1,
+    backgroundColor: '#ffff',
+    color: '#2A2A2A',
+  },
 });
 
 class SearchableList extends Component {
@@ -24,11 +31,21 @@ class SearchableList extends Component {
     super(props);
     console.log('props:', props);
     this.renderList = this.renderList.bind(this);
+    this.renderProductInfo = this.renderProductInfo.bind(this);
   }
 
+  renderProductInfo(product, index) {
+    //pk,name,parsed_price,parsed_condition,part_number,photographs,paused,parsed_delivery
+    return (
+    <View key={ index }>
+      <Text>{ product.name }</Text>
+      <Text>{ product.parsed_price }</Text>
+      <Text>{ product.parded_condition }</Text>
+    </View>);
+  };
+
   renderList() {
-    let products = this.props.products.map(
-      (element, index) =>  (<Text>{ element.name }</Text>));
+    let products = this.props.products.map(this.renderProductInfo);
 
     return <ScrollView>{ products }</ScrollView>;
   }
@@ -36,12 +53,13 @@ class SearchableList extends Component {
   render() {
     const {
       container,
+      search,
     } = styles;
 
     return (
       <View
         style={ container } >
-        <TextInput placeholder='Buscar'></TextInput>
+        <TextInput placeholder='Buscar' style={ search }></TextInput>
         { this.renderList() }
       </View>
     );

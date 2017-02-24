@@ -11,8 +11,8 @@ const InitialState = {
   error: false,
   products:
   [
-    { name: 'moco de gorila', precio: 2344 },
-    { name: 'moco de gorila', precio: 2344 },
+    { name: 'moco de gorila', parsed_price: 2344 },
+    { name: 'moco de gorila', parsed_price: 2344 },
   ],
 };
 
