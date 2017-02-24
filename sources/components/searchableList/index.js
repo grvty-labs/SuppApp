@@ -6,7 +6,8 @@ import {
   Text,
   View,
   TouchableHighlight,
-  TextInput
+  TextInput,
+  ScrollView,
 } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -20,13 +21,12 @@ const styles = StyleSheet.create({
 
 class SearchableList extends Component {
   constructor (props) {
-    console.log(props);
     super(props);
+    console.log('props:', props);
     this.renderList = this.renderList.bind(this);
   }
 
   renderList() {
-    console.log(this.props);
     let products = this.props.products.map(
       (element, index) =>  (<Text>{ element.name }</Text>));
 
@@ -50,7 +50,8 @@ class SearchableList extends Component {
 
 function mapStateToProps(state) {
   return {
-    products: state.products,
+    products: state.productsReducer.products,
+    loggedIn: state.loginReducer.loggedIn,
   };
 }
 

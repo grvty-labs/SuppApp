@@ -9,7 +9,11 @@ const InitialState = {
   dataFetch: false,
   isFetching: false,
   error: false,
-  products: [],
+  products:
+  [
+    { name: 'moco de gorila', precio: 2344 },
+    { name: 'moco de gorila', precio: 2344 },
+  ],
 };
 
 export default function productsReducer(state = InitialState, action) {
