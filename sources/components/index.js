@@ -6,13 +6,15 @@ import {
   Text,
   View
 } from 'react-native';
+
 import Login from './login';
+import SearchableList from './searchableList';
 
 class App extends Component {
   render() {
     return (
       <View style={ { flex: 1 } }>
-        <Login />
+        <SearchableList />
       </View>
     );
   }
@@ -23,7 +25,7 @@ const styles = StyleSheet.create({
 });
 
 function mapStateToProps(state) {
-  return {};
+  return state;
 }
 
 function mapDispatchToProps(state) {

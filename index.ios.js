@@ -3,7 +3,7 @@
  * https://github.com/facebook/react-native
  * @flow
  */
-
+import './ReactotronConfig';
 import React, { Component } from 'react';
 import App from './sources/components';
 import configureStore from './sources/store';

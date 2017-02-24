@@ -1,13 +1,18 @@
-import { LOGIN_DISPLAY, LOGIN_SEND, LOGIN_SUCCESS, LOGIN_FAILED } from '../constants';
+import {
+  LOGIN_DISPLAY,
+  LOGIN_SEND,
+  LOGIN_SUCCESS,
+  LOGIN_FAILED
+} from '../constants';
 
 const InitialState = {
-  dataFetch : false,
-  isFetching : false,
+  dataFetch: false,
+  isFetching: false,
   error: false,
-  loggedIn : false,
-}
+  loggedIn: false,
+};
 
-export default function loginReducer( state = InitialState, action ){
+export default function loginReducer(state = InitialState, action) {
   switch (action.type){
     case LOGIN_DISPLAY:
       return state;

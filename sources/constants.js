@@ -1,5 +1,11 @@
 //Login constants
 export const LOGIN_DISPLAY = 'LOGIN_DISPLAY';
 export const LOGIN_SEND = 'LOGIN_SEND';
-export const LOGIN_SUCCESS = 'LOGIN_SUCCESS' ;
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAILED = 'LOGIN_FAILED';
+
+//Products list constants
+export const PRODUCTS_DATA_DISPLAY = 'PRODUCTS_DATA_DISPLAY';
+export const PRODUCTS_DATA_SEND = 'PRODUCTS_DATA_SEND';
+export const PRODUCTS_DATA_SUCCESS = 'PRODUCTS_DATA_SUCCESS';
+export const PRODUCTS_DATA_FAILED = 'PRODUCTS_DATA_FAILED';
