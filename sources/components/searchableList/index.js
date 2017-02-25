@@ -69,7 +69,7 @@ class SearchableList extends Component {
 function mapStateToProps(state) {
   return {
     products: state.productsReducer.products,
-    loggedIn: state.loginReducer.loggedIn,
+    token: state.loginReducer.token,
   };
 }
 

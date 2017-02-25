@@ -1,5 +1,6 @@
 'use strict';
 import { connect } from 'react-redux';
+import { loginSend } from '../../actions/loginActions';
 import React, { Component } from 'react';
 import {
   StyleSheet,
@@ -13,7 +14,7 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 30,
     flexDirection: 'column',
-    flex: 1,
+    flexGrow: 1,
     backgroundColor: 'powderblue',
   },
 
@@ -22,7 +23,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#0b7eff',
-    flex: 1,
+    flexGrow: 1,
   },
 
   input: {
@@ -31,11 +32,11 @@ const styles = StyleSheet.create({
     paddingLeft: 5,
     fontSize: 18,
     lineHeight: 23,
-    flex:  1,
+    flexGrow:  1,
   },
 
   header: {
-    flex: 1,
+    flexGrow: 1,
   },
 
 });
@@ -61,6 +62,7 @@ class Login extends Component {
           placeholder = 'password'
           style={ input } />
         <TouchableHighlight
+          onPress={ () => (this.props.loginSend('daniel.ortiz', 'grvty_admin')) }
           style={ buttonStyle }>
           <Text>Login</Text>
         </TouchableHighlight>
@@ -70,11 +72,15 @@ class Login extends Component {
 }
 
 function mapStateToProps(state) {
-  return {};
+  return {
+    ...state.loginReducer,
+  };
 }
 
-function mapDispatchToProps(state) {
-  return {};
+function mapDispatchToProps(dispatch) {
+  return {
+    loginSend: (username, password) => dispatch(loginSend(username, password)),
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
