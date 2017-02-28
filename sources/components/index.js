@@ -1,6 +1,7 @@
 'use strict';
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
+import { Navigation } from 'react-native-navigation';
 import {
   StyleSheet,
   Text,
@@ -18,6 +19,11 @@ class App extends Component {
       </View>
     );
   }
+}
+
+export function registerScreens(store, Provider) {
+  Navigation.registerComponent('suppapp.Login', () => Login, store, Provider);
+  Navigation.registerComponent('suppapp.Search', () => SearchableList, store, Provider);
 }
 
 const styles = StyleSheet.create({

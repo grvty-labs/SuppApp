@@ -73,7 +73,7 @@ class Login extends Component {
 
 function mapStateToProps(state) {
   return {
-    ...state.loginReducer,
+    token: state.loginReducer.token,
   };
 }
 
